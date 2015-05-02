@@ -5,6 +5,7 @@
     android:background="@color/primaryColor" tools:context=".MainActivity">
 <include layout="@layout/app_bar"/>
    <LinearLayout
+       android:background="@drawable/square_backgroundgolden"
        android:layout_margin="16dp"
        android:padding="16dp"
        android:orientation="vertical"
