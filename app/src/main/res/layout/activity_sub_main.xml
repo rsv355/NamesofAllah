@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryColor"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <include layout="@layout/app_bar"/>
+   <LinearLayout
+       android:layout_margin="16dp"
+       android:background="@drawable/square_background"
+       android:gravity="center"
+       android:layout_gravity="center"
+       android:padding="16dp"
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_weight="1"
+       android:layout_height="0dp">
+      <TextView
+          android:gravity="center"
+          android:text="sub activity"
+          android:textColor="#fff"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" />
+       </LinearLayout>
+
+    <LinearLayout
+        android:layout_margin="16dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/square_background"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:padding="16dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/left"
+            android:background="@drawable/left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+      <ImageView
+          android:id="@+id/playAudio"
+          android:layout_marginLeft="20dp"
+          android:layout_marginRight="20dp"
+          android:background="@drawable/audio_play"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/right"
+            android:background="@drawable/right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
