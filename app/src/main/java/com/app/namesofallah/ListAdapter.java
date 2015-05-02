@@ -8,24 +8,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
 class ListAdapter extends BaseAdapter {
     LayoutInflater layoutInflator;
     private Context ctx;
+    Content obj;
     public ListAdapter(Context ctx){
         this.ctx = ctx;
+        obj = new Content();
     }
 
     @Override
     public int getCount() {
-        return 100;
+        return obj.Names.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return null;
+        return obj.Names.get(i);
     }
 
     @Override
@@ -40,7 +43,9 @@ class ListAdapter extends BaseAdapter {
         view = layoutInflator.inflate(R.layout.list_item, viewGroup, false);
 
        TextView txt = (TextView)view.findViewById(R.id.txt1);
-        txt.setText("Item "+position);
+       ImageView icon = (ImageView)view.findViewById(R.id.imgIcon);
+
+       txt.setText(obj.Names.get(position));
 
         return view;
     }

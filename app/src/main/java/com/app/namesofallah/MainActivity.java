@@ -98,6 +98,10 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
+    private void initialize(){
+
+      }
+
 
     //end of main class
 }
