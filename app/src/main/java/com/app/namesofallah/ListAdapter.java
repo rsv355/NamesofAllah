@@ -4,6 +4,7 @@ package com.app.namesofallah;
  * Created by Krishna on 30-04-2015.
  */
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +47,12 @@ class ListAdapter extends BaseAdapter {
        ImageView icon = (ImageView)view.findViewById(R.id.imgIcon);
 
        txt.setText(obj.Names.get(position));
+
+
+       String imgName = obj.Images.get(position);
+       int resId = ctx.getResources().getIdentifier(imgName, "drawable", ctx.getPackageName());
+
+       icon.setBackgroundResource(resId);
 
         return view;
     }
