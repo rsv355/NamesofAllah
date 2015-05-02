@@ -9,8 +9,9 @@ public class Content {
 
     public static ArrayList<String> Names;
     public static ArrayList<String> Images;
+    public static ArrayList<String> Wallpaper;
     public static ArrayList<String> Audio;
-
+    public static ArrayList<String> BIG_Images;
     public static ArrayList<String> Sub_heading;
     public static ArrayList<String> Description;
 
@@ -19,6 +20,8 @@ public class Content {
         this.Names = new ArrayList<String>();
         this.Sub_heading = new ArrayList<String>();
         this.Images = new ArrayList<String>();
+        this.Wallpaper = new ArrayList<String>();
+        this.BIG_Images = new ArrayList<String>();
         this.Audio = new ArrayList<String>();
         this.Description = new ArrayList<String>();
 
@@ -132,6 +135,14 @@ public class Content {
 
         for(int j=1;j<=100;j++){
             this.Images.add(j-1,"name"+j+"_small");
+        }
+
+        for(int k=1;k<=100;k++){
+            this.BIG_Images.add(k-1,"name"+k);
+        }
+
+        for(int a=1;a<=100;a++){
+            this.Wallpaper.add(a-1,"name"+a+"wallpaper");
         }
 
 

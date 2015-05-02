@@ -50,6 +50,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l) {
                 Intent ii = new Intent(MainActivity.this,SubActivity.class);
+                ii.putExtra("pos",pos);
                 startActivity(ii);
             }
         });
