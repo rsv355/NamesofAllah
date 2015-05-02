@@ -1,4 +1,4 @@
-package com.app.Sub_headingofallah;
+package com.app.namesofallah;
 
 import java.util.ArrayList;
 
@@ -20,6 +20,8 @@ public class Content {
         this.Sub_heading = new ArrayList<String>();
         this.Images = new ArrayList<String>();
         this.Audio = new ArrayList<String>();
+        this.Description = new ArrayList<String>();
+
 
         this.Names.add(0,"Allah");
         this.Names.add(1,"Ar-Rahmaan");
@@ -235,6 +237,128 @@ public class Content {
         this.Sub_heading.add(96,"The Ultimate Inheritor");
         this.Sub_heading.add(97,"The Guide to the Right Path");
         this.Sub_heading.add(98,"The Patient One");
+
+
+        // position 12  13  14 39 59 65 66 75 94
+        this.Description.add(0,"If you recite this name of Allah 1000 times daily, Allah will remove all doubts and uncertainities from your heart and instill determination and faith. Insha-Allah.");
+        this.Description.add(1,"If you recite this name of Allah 100 times daily after every Salaah (prayer), Allah will remove hard-heartedness and negligence from your heart. Insha-Allah.");
+        this.Description.add(2,"If you recite this name of Allah 100 times daily after every Salaah (prayer), Allah will safeguard you against all calamities and maladies. Insha-Allah.");
+        this.Description.add(3,"If you recite this name of Allah abundantly every day after Zawaal (the time of mid-day immediately before Duhr prayer), Allah will give you abundant wealth. Insha-Allah.");
+        this.Description.add(4,"If you recite this name of Allah abundantly every day, Allah will cure you of all spiritual sickness. Insha-Allah.");
+        this.Description.add(5,"If you recite this name of Allah abundantly, Allah will protect you from all calamities and maladies. If you recite it 115 times and blow on a sick person, Allah will restore his health. Insha-Allah.");
+        this.Description.add(6,"If you recite this name of Allah 630 times in times of fear, Allah will protect you from all calamities, mishaps and losses. If you write it on paper (or engrave it on a silver ring) and keep it with you (as Ta'weez), your physical and spiritual safety will remain the responsibility of Allah. Insha-Allah.");
+        this.Description.add(7,"If you offer 2 rakaat Salaah after ghusl and read, with sincerity, this name of Allah 100 times, Allah will purify you physically and spiritually. If you recite it 115 times, Allah will acquaint you with the unseen. Insha-Allah.");
+        this.Description.add(8,"If you recite this name of Allah 40 times each day for 40 days, Allah will grant you honor and self-sufficiency. If you recite it 41 times daily with constancy, Allah will grant you honor and self-sufficiency, if you are being treated with dishonor. Insha-Allah.");
+        this.Description.add(9,"If you recite this name of Allah 226 times every morning and evening, Allah will safeguard you against the oppression of tyrants and despots. Insha-Allah.");
+        this.Description.add(10,"If you recite this name of Allah constantly, Allah will grant you honor and greatness. If you read it continually before any task, it will be accomplished. Insha-Allah.");
+
+        this.Description.add(11,"If you recite this name of Allah 100 times for 7 days, Allah will safeguard you against all adversities. If you form the habit of reciting it regularly, Allah will appoint an angel who will worship Allah continuously on your behalf. Insha-Allah.");
+        this.Description.add(12,"If a barren woman fasts for 7 days and each day, after making iftaar with water, reads 21 times, Allah will grant her male children. Insha-Allah.");
+        this.Description.add(13,"If a barren woman fasts for 7 days and each day, after making iftaar with water, reads 21 times, Allah will grant her male children. Insha-Allah.");
+        this.Description.add(14,"If you recite this name of Allah 100 times after Jumma Salaah (prayer), you will soon begin to perceive Allah's forgiveness. If you say (Yaa-Ghaffaaru Ighfirli) daily after Asr Salaah (prayer), Allah will include you amongst those whom he has forgiven. Insha-Allah.");
+        this.Description.add(15,"If you recite this name of Allah continually, Allah will free you from the love of this world and, instead, Allah's love will become inborn in your heart. Insha-Allah.");
+
+        this.Description.add(16,"If a poverty stricken person recites this name of Allah continuously or writes it and keeps it on him (as Taaweez) or recites this name of Allah 40 times in the last sajdah of Salaat-ud-Doha (Chast prayer), Allah will free him from poverty in an unexpected and amazing manner. Insha-Allah.\n\n For particular need to be fulfilled, observe sajdah 3 times in the courtyard of the house or Masjid (Mosque) and then lift your hands (as in Du'a) and recite this name of Allah 100 times, Allah will fulfill your need. Insha-Allah.");
+        this.Description.add(17,"Before Fajr Salaah (prayer), if you blow in all four corners of your house beginning from the right-hand corner while facing Qiblah, after reciting this name of Allah 10 times in each corner, Allah will open the doors of rizq (sustenance) for you; sickness and poverty will never enter your home. Insha-Allah.");
+        this.Description.add(18,"If you recite this name of Allah 70 times by placing both your hands on your bosom after Fajr Salaah (prayer), Allah will illumunate your heart with the Noor of Imaan. Insha-Allah.");
+        this.Description.add(19,"If you recite this name of Allah abundantly, Allah will open the gates of knowledge and wisdom for you. Moreover, your heart will be filled with the Ma'rifah (cognizance) of Allah. Insha-Allah.");
+        this.Description.add(20,"If you write this name of Allah (with saffron or by the mere action of your finger) on four morsels of bread each day for 4 days and eat them, Allah will safeguard you against hunger, thirst, injuries, pain etc. Insha-Allah.");
+
+
+        this.Description.add(21,"If you recite this name of Allah 10 times daily by lifting your hands towards the heavens (as in Du'a) after Salaat-ud-Doha (Chast prayer) and thereafter pass your hands across the face (as when finsihing Du'a), Allah will grant you self-sufficiency and independence. Insha-Allah.");
+        this.Description.add(22,"If you recite this name of Allah 500 times, Allah will fulfill your needs and remove all your difficulties. If you fast for 3 days and on the fourth day say this beautiful name 70 times while sitting in seclusion, you will gain victory over your enemy. Insha-Allah.");
+        this.Description.add(23,"If you recite this name of Allah 100 times in the middle of the fourteenth night of every lunar month, Allah will grant you self-sufficiency and independence of the entire creation. Insha-Allah.");
+        this.Description.add(24,"If you recite this name of Allah 40 times after Maghrib Salaah (prayer) on every Monday and Friday, Allah will grant you honor and reverence. Insha-Allah.");
+        this.Description.add(25,"If you place your hand on your bosom and recite this name of Allah 101 times at bedtime, your heart will become alive with knowledge and wisdom. Insha-Allah.");
+
+        this.Description.add(26,"If you wish your disobedient wife or children become obedient, place your hand on their forehead and recite this name of Allah 21 times and blow on them. They will soon become obedient. Insha-Allah.");
+        this.Description.add(27,"If your family member is missing or absconding or if your belongings have been stolen, write this name of Allah on all 4 corners of a square paper. At the time of Sehri place the paper on your palms and lift it toward the heavens and make Du'a. The missing person or the stolen goods will be returned soon, free from any harm or damage. Insha-Allah.");
+        this.Description.add(28,"If you fear any calamity caused by an act of Allah, recite this name of Allah repeatedly, you will be protected from all calamities. Insha-Allah.");
+        this.Description.add(29,"If you are genuinely oppressed or victimized, recite this name of Allah profusely with a view to counteracting the oppressor. Allah will render you proctection. Insha-Allah. This should never be done if circumstances do not warrant.");
+        this.Description.add(30,"If a lady's breasts do not yield milk, write this name of Allah on a piece of paper, soak it in water and make her drink it. Her breasts will abound in milk. Insha-Allah.");
+
+        this.Description.add(31,"If your wife is of ill character, recite this name of Allah constantly in her presence. She will soon become of good character. Insha-Allah.");
+        this.Description.add(32,"If you recite this name of Allah in seclusion 93 times for 45 days, all your evil habits and bad qualities will change into good habits. Insha-Allah.");
+        this.Description.add(33,"If you recite this name of Allah 20 times daily and blow it on 20 pieces of bread and consume it, Allah will make the entire creation subservient to you. Insha-Allah.");
+        this.Description.add(34,"If you place your hand on the stomach of your pregnant wife and recite this name of Allah 99 times at the time of Sehri, she will not have a miscarriage or give birth prematurely. Insha-Allah.");
+        this.Description.add(35,"If a person is lost, recite this name of Allah 70 times in each corner of the house during the night when everyone is asleep. The missing person will either return within 7 days or his whereabouts will be known within that period. Insha-Allah.");
+
+        this.Description.add(36,"If you are sick, recite this name of Allah repeatedly, your health will be restored. If you recite this name of Allah repeatedly and blow on a sick person, his health will be restored. If you recite this name of Allah 89 times and blow on yourself, Allah will safeguard you against all obstacles and bondages. Insha-Allah.");
+        this.Description.add(37,"If you have no control over yourself, place your hand on your bosom and recite this name of Allah continuously before falling asleep. Allah will give you the strength to control yourself. Insha-Allah.");
+        this.Description.add(38,"If you desire sound health recite this name of Allah 3000 times daily. If you are sick, write this name of Allah in a bowl with musk and rose water, then wash the inscription with water and drink it, Allah will soon cure you. Insha-Allah.");
+        this.Description.add(39,"If you recite this name of Allah continuously, you will attain honor and dignity amongst people. If you recite this name of Allah constantly in seclusion, you will become wealthy. If you continuously recite (Yaa Hayyu Yaa Qayyoomu) after Fajr until sunrise, your laziness will vanish. Insha-Allah.");
+        this.Description.add(40,"If you recite this name of Allah continuously while having food, the food will become a source of strength, illumination and Noor (light) for your heart. Insha-Allah.");
+
+        this.Description.add(41,"If you recite this name of Allah in seclusion to such an extent and in such a manner that you become euphoric, the Noor (light) of Allah will soon become evident in your heart. Insha-Allah.");
+        this.Description.add(42,"If you desire good and pious children, write this name of Allah and keep it with you all the time, Allah will fulfill your desire. Insha-Allah.");
+        this.Description.add(43,"If you place your head in Sajdah at the time of Sehri and recite this name of Allah 115 or 125 times, Allah will grant you spiritual and physical truthfulness. If you recite this name of Allah constantly in the state of Wudhu, Allah will soon make you independent of the entire creation. Insha-Allah.");
+        this.Description.add(44,"If you offer 2 rakaat Salaah (prayer) and recite this name of Allah 100 times, Allah will humble and disgrace your enemies (provided you are justified). If you recite this name of Allah 41 times before undertaking a difficult task, the difficulty will be removed. Insha-Allah.");
+        this.Description.add(45,"If you recite this name of Allah 20 times after waking up from sleep, Allah will ensure all your tasks are fulfilled efficiently. Insha-Allah.");
+
+        this.Description.add(46,"If you recite this name of Allah abundantly at the time of war or during a righteous struggle in the path of Allah, Allah will give you courage to make advances and safeguard you from the enemy. If you recite this name of Allah at all times, you will be come obedient and submissive to Allah. Insha-Allah.");
+        this.Description.add(47,"If you recite this name of Allah frequently, you will soon resort to genuine repentance. If you recite this name of Allah 100 times daily, you will become dear to and a favorite of Allah. Insha-Allah.");
+        this.Description.add(48,"If you desire male children, recite this name of Allah 40 times daily for 40 days, Allah will fulfill your desire. If any wayfarer recite this name of Allah 1000 times on a Friday, he will soon return to his people safe and sound. Insha-Allah.");
+        this.Description.add(49,"If you wish \nthat the love for Allah gets firmly established in your heart or \n that the love of anything or anyone besides Allah be driven out of your heart or \n to compensate for all your sins \n to die in a state of Imaan \n\n Recite this name of Allah 1000 times daily, Allah will fulfill your wish. Insha-Allah.");
+        this.Description.add(50,"If you make Du'a for protection after reciting this name of Allah 75 times, Allah will protect you from the evils of envious persons, oppressors and enemies. Insha-Allah.\n\nIf you fear a particular enemy then, after reciting this name of Allah 75 times, you may observe sajdah and invoke Allah's help against the enemy in the following manner: \"O Allah! Protect me from the evils of so and so.\", Allah will grant you protection. Insha-Allah.");
+
+        this.Description.add(51,"If you recite this name of Allah 500 times or 50 times on Thurday after offering Salaat-ud-Doha (Chast prayer), Allah will surely grant your Du'as. Insha-Allah. It is necessary that no talking be done during the course of reciting it.\n\nIf you recite this name of Allah 100 times on a Thursday between the Sunnah and Fardh of Fajr Salaah (prayer), Allah will favour you with with His special blessings. Insha-Allah.");
+        this.Description.add(52,"If you recite this name of Allah 100 times after the Jumma Salaah (prayer) constantly, Allah will grant strength to your eye-sight and Noor (light) to your heart. Insha-Allah.");
+        this.Description.add(53,"If you recite this name of Allah 99 times while in the state of Wudhu during the last portion of the night, Allah will cause your heart to perceive all secrets and to be filled with Noor (light). If you recite this name on a Friday night in such a manner that you grow euphoric and ecstatic then Allah will cherish your heart with manifestations and inspirations. Insha-Allah.");
+        this.Description.add(54,"If you write this name of Allah (with saffron or by the mere action of your finger) on 20 pieces of bread on the day or night of Jumma and consume it, Allah will cause the entire creation to become subservient to you. Insha-Allah.");
+        this.Description.add(55,"If you recite this name of Allah 133 times daily, Allah will grant abundance in your rizq (sustenance) and cause all your tasks to be accomplished without difficulties. If you are afflicted with poverty, misery, sickness, loneliness or any adversity, then you should make Wudhu in the proper manner and offer 2 rakaat Salaah (prayer) and then bearing in mind the objective, recite this name of Allah 100 times. Allah will surely grant you deliverance. Insha-Allah.");
+
+        this.Description.add(56,"If you recite this name of Allah continually for seven days, you will begin to perceive hidden secrets. If you have insatiable desire for pleasure, recite this name of Allah continually. Allah will free you from such base desires. Insha-Allah.");
+        this.Description.add(57,"If you write this name of Allah on paper, soak it in water and then sprinkle or rub the water on something, then Barakah (Allah's blessing) will be imparted to it and Allah will safeguard it against all calamities. Insha-Allah.");
+        this.Description.add(58,"If you recite this name of Allah constantly, you will be graced with great honor and dignity. Insha-Allah.");
+        this.Description.add(59,"If you recite this name of Allah frequently, all your maladies, sorrow and grief will be removed. Barakah (Allah's blessing) will be imparted to your wealth and offsprings.\n\nAs related in a hadith, if you recite (Yaa-Rabbigh-firli) 3 times while in sajdah, Allah will forgive all your past sins and any sins that you may commit in future. Insha-Allah.");
+        this.Description.add(60,"If you recite this name of Allah 41 times while facing any difficulties (financial, physical, spritual, mental etc), Allah will grant deliverance soon. Insha-Allah.");
+
+        this.Description.add(61,"If you recite this name of Allah daily and constantly and keep with you a written copy of it, Allah will exalt you, grant affluence and fulfill all your desires. Insha-Allah.");
+        this.Description.add(62,"If you have been dismissed from a post, then fast for seven days and each day recite this name of Allah 1000 times, Allah will reinstate you to your post and grace you with honor and dignity. Insha-Allah.");
+        this.Description.add(63,"If you recite this name of Allah daily and constantly, and keep with you a written copy of it, Allah will protect you from all hazards, losses and harmful things. Insha-Allah.");
+        this.Description.add(64,"If you recite this name of Allah 7 times and blow in a bowl of water and drink it yourself or allow someone else to drink from it or to take a deep breath from the bowl, Allah will fulfill all your desires soon. Insha-Allah.");
+        this.Description.add(65,"If you fear any human being or any thing, recite (Hasbiyallaahul-Haseebu) 70 times in the morning and 70 times at night for eight days starting from Thursday, Allah will grant you protection against the evil of the person or thing you fear. Insha-Allah.");
+
+        this.Description.add(66,"If you write (Yaa Jaleelu) on a paper with saffron or musk and keep it with you as a Ta'weez, Allah will give you honor, greatness, rank and dignity. Insha-Allah.");
+        this.Description.add(67,"If you wish to be revered and honored by the Ulama and pious people recite this name of Allah continually and fall asleep. Allah will fulfill your wish. Insha-Allah.");
+        this.Description.add(68,"If you recite this name of Allah 7 times each day and blow on yourself and your family, Allah will protect you and your wealth from destruction and calamities. Recite this name of Allah all the time to be safeguarded at all times. Insha-Allah.");
+        this.Description.add(69,"If you recite this name of Allah constantly, you will perceive that all your Du'as are being granted. Insha-Allah.");
+        this.Description.add(70,"If you recite this name of Allah repeatedly, Allah will grant you spiritual and material self-sufficiency and independence. Insha-Allah.");
+
+        this.Description.add(71,"If you recite this name of Allah constantly, Allah will open the doors of knowledge and wisdom for you. If you want a particular task to be accomplished recite this name Of Allah frequently and constantly. Insha-Allah.");
+        this.Description.add(72,"If you recite this name of Allah 1000 times, blow on food, and consume it along with your spouse, Allah will settle all your disputes and differences and create a strong bond of love and affection . Insha-Allah.");
+        this.Description.add(73,"A person who has contracted a fatal disease such as pox, leprosy etc. should fast on the 13th, 14th and 15th of the lunar month and after breaking fast recite this name of Allah profusely, blow on water and drink it. He will soon be cured. Insha-Allah.");
+        this.Description.add(74,"If you recite this name of Allah 500 times daily after Ishraaq Salaah (prayer), Allah will cause your eyes and heart to be filled with Noor (light). Insha-Allah.");
+        this.Description.add(75,"If you recite this name of Allah 33 times daily, you will soon begin to perceive the deeper secrets of Allah and a strong bond of love and affection will form between you and Allah. If you recite (Huwal-Awwalu Wal-Aakhiru Wad-Dhaahiru Wal-Baatinu Wahuwa Alaa Kulli Shaiyyin Qadeer) continously after offering 2 rakaat Salaah, all your needs will be fulfilled. Insha-Allah.");
+
+        this.Description.add(76,"If you recite this name of Allah repeatedly, Allah will safeguard you from all unexpected calamities. If this name of Allah is inscribed in a new earthen cup or jug and it is filled with water and the water is sprinkled in the house, the house will be safeguarded against all calamities. If you wish to subdue another person recite this name of Allah 11 times, Allah will fulfill your wish. Insha-Allah.");
+        this.Description.add(77,"If you recite this name of Allah continously, Allah will solve all your problems soon. If a woman recites this name of Allah abundantly during her menstruation, Allah will relieve her from all ailments. Insha-Allah.");
+        this.Description.add(78,"If you are in the habit of taking intoxicants or committing adultery or indulging in any other evil, recite this name of Allah 7 times daily. Allah will guide you. If you recite this name of Allah excessively, Allah will expel the love of this world from your heart. If you recite this name of Allah 7 times and blow on your child soon after birth, Allah will grant your child protection from calamities until puberty. Insha-Allah.");
+        this.Description.add(79,"If you desire that Allah guide you to sincere repentance, recite this name of Allah 360 times daily after Salat-ud-Doha (Chast prayer), Allah will fulfill your desire. If you recite this name of Allah abundantly, all your tasks will be accomplished without any difficulty. If you recite this name of Allah 10 times in the presence of a tyrant, you will soon be freed from the opression of the tyrant. Insha-Allah.");
+        this.Description.add(80,"If you are justified and desire to take revenge against your enemy, but haven't the power to do so, recite this name of Allah continously for 3 Fridays, Allah Himself will take revenge on your behalf. Insha-Allah.");
+
+        this.Description.add(81,"If you recite this name of Allah abundantly, Allah will forgive you. Insha-Allah.");
+        this.Description.add(82,"If you desire that the entire creation become affectionate towards you (and vice-versa), recite this name of Allah repeatedly. If you desire that your anger be subdued, recite Darood 10 times and this name of Allah 10 times. If you recite Darood 10 times and this name of Allah 10 times and blow on an angry person, his anger will be subdued. Insha-Allah.");
+        this.Description.add(83,"If you recite this name of Allah constantly, Allah will grant you wealth, self-sufficiency and independence. Insha-Allah.");
+        this.Description.add(84,"If you recite this name of Allah constantly, Allah will grant you honor, dignity and self-sufficiency. Insha-Allah.");
+        this.Description.add(85,"If you recite this name of Allah constantly, Allah will protect you from evil doubts created by the Shaytaan. If you recite this name of Allah 700 times for a purpose, Allah will fulfill it. Insha-Allah.");
+
+        this.Description.add(86,"If your family or relatives are scattered (due to war, earthquate, floods or other calamities), take bath at the time of Doha (Chast), lift your gaze toward the heavens and recite this name of Allah 10 times closing one finger each time, until all 10 fingers are closed. Afterwards pass your hands across your face as when completing Du'a. The disperse members of your family will soon come together. Insha-Allah.");
+        this.Description.add(87,"If you recite this name of Allah 70 times daily, Allah will grant you self-sufficiency and Barakah in your wealth. If you are afflicted with physical or spiritual sickness or any difficulty, recite this name of Allah abundantly and blow on your entire body. Allah will soon heal you and relieve you of your difficulty. Insha-Allah.");
+        this.Description.add(88,"If you recite Darood 11 times, recite this name of Allah 1111 times, recite Darood again 11 times and then Surah Muzzammil (Surah 73) after Fajr or Isha Salaah (prayer) , you will be granted both material and spiritual wealth. Insha-Allah.");
+        this.Description.add(89,"If you have any disputes with your spouse, recite this name of Allah 20 times while lying down on the bed, the dispute will be settled and love and affection will result. If you recite this name of Allah constantly, Allah will safeguard you against all calamities. If you recite this name of Allah for any legitimate purpose, Allah will fulfill it. Insha-Allah.");
+        this.Description.add(90,"If you recite this name of Allah 100 times on the eve of Jumma (Friday), Allah will safeguard you against all physical and spiritual calamities and draw you nearer to Allah. Insha-Allah.");
+
+        this.Description.add(91,"If you recite this name of Allah abundantly during travel, Allah will safeguard you against all hazards. If you recite this name of Allah 41 times before a task, it will be accomplished efficiently. If you recite this name of Allah prior to intercourse, Allah will grant you good and pious children. Insha-Allah.");
+        this.Description.add(92,"If you recite this name of Allah 1001 times after reciting Surah Noor (Surah 24), you heart will be illuminated with the Noor (light) of Allah. Insha-Allah.");
+        this.Description.add(93,"If you raise both hands (as in Du'a) while lifting your gaze toward the heavens and recite this name of Allah several times and then pass both your hands on your face (as when completing Du'a), Allah will grant you complete guidance and associate you with the devout and pious. Insha-Allah.");
+        this.Description.add(94,"If you are in grief, recite (Yaa-Badee-us-Samaawaati-Wal-Ardh) 1000 times, Allah will soon grant you relief from your misery. If a particular task is to be undertaken, but you are not certain as to its feasibility, recite this name of Allah before falling asleep, you will receive guidance in a dream. Insha-Allah.");
+        this.Description.add(95,"If you recite this name of Allah 1000 times on the night of Jumma (Friday), Allah will grant you protection and accept all your good deeds. Insha-Allah.");
+
+        this.Description.add(96,"If you recite this name of Allah 100 times at sunrise, Allah will protect you against all sorrows, hardships and calamities and you will die as a Mu'min (believer). If you recite this name of Allah 1000 times between Maghrib and Isha Salaah (prayer), Allah will safeguard you from confusions, agitations and disturbances. Insha-Allah.");
+        this.Description.add(97,"If you are unsure how to complete a particular task or are unable to work out plans for the task, recite this name of Allah 1000 times between Maghrib and Isha Salaah (prayer), the plan will become evident to you in a dream or by instinct. If you recite this name of Allah daily, Allah will safeguard you against all mishaps and grant you financial progress. Insha-Allah.");
+        this.Description.add(98,"If you recite this name of Allah 100 times before sunrise, Allah will safeguard you against all calamities for the remainder of the day and prevent your enemies from uttering a single word against you. If you are in difficulty, recite this name of Allah 1020 times, Allah will soon provide you relief and contentment of the heart. Insha-Allah.");
+
 
     }
 
