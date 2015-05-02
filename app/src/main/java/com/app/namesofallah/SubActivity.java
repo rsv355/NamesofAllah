@@ -1,10 +1,12 @@
 package com.app.namesofallah;
 
+import android.app.ProgressDialog;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -27,6 +29,8 @@ public class SubActivity extends ActionBarActivity {
     private Toolbar toolbar;
     private TextView heading,subheading,desc;
     private int POS;
+    Content obj;
+    ProgressDialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +44,7 @@ public class SubActivity extends ActionBarActivity {
         }
         toolbar.setNavigationIcon(R.mipmap.ic_launcher);
 
-
+        obj = new Content();
         left = (ImageView)findViewById(R.id.left);
         right = (ImageView)findViewById(R.id.right);
         playAudio = (ImageView)findViewById(R.id.playAudio);
@@ -84,6 +88,29 @@ public class SubActivity extends ActionBarActivity {
         playAudio.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
+
+                dialog= ProgressDialog.show(SubActivity.this,obj.Names.get(POS),"Playing audio",true);
+                dialog.setCancelable(false);
+
+                String fname=obj.Audio.get(POS);
+                int resID=getResources().getIdentifier(fname, "raw", getPackageName());
+                MediaPlayer mediaPlayer=MediaPlayer.create(SubActivity.this,resID);
+
+                mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                    @Override
+                    public void onPrepared(MediaPlayer mediaPlayer) {
+                        dialog.show();
+                    }
+                });
+                mediaPlayer.start();
+
+                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        dialog.dismiss();
+                    }
+                });
+
                 return false;
             }
         });
@@ -92,7 +119,7 @@ public class SubActivity extends ActionBarActivity {
 
     private void fillDetails(int POS2){
 
-        Content obj = new Content();
+
 
      /*   Bitmap bitmapImage = getBitmapFromAsset(obj.BIG_Images.get(POS));
         Drawable drawImage = new BitmapDrawable(getResources(), bitmapImage);*/
@@ -105,6 +132,12 @@ public class SubActivity extends ActionBarActivity {
         heading.setText(obj.Names.get(POS2));
         subheading.setText(obj.Sub_heading.get(POS2));
         desc.setText(obj.Description.get(POS2));
+
+        if(POS2==0){
+            playAudio.setVisibility(View.GONE);
+        }else {
+            playAudio.setVisibility(View.VISIBLE);
+        }
 
     }
 
