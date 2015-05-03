@@ -38,7 +38,7 @@ public class MainActivity extends ActionBarActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar != null) {
-            toolbar.setTitle("HOME");
+            toolbar.setTitle("99 names of Allah");
 //            toolbar.setLogo(R.drawable.logo);
             setSupportActionBar(toolbar);
         }
