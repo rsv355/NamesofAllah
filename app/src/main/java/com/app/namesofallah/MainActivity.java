@@ -1,15 +1,23 @@
 package com.app.namesofallah;
 
+import android.app.WallpaperManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.ListPopupWindow;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.twotoasters.jazzylistview.JazzyListView;
 import com.twotoasters.jazzylistview.effects.CurlEffect;
@@ -22,6 +30,7 @@ public class MainActivity extends ActionBarActivity {
     private ImageView left,right,playAudio;
     private String[] names1 = {"My Recipes", "Profiles", "Add Recipe"};
     private Toolbar toolbar;
+    ListPopupWindow popupWindow;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,9 +91,10 @@ public class MainActivity extends ActionBarActivity {
     private void openSettings() {
         View menuSettings = findViewById(R.id.action_settings); // SAME ID AS MENU ID
 
-        String[] names = {"Settings","Rate Us on Play Store","Join Us on Facebook","Share this App with Friends","Disclaimers","About Us","Feedback","Logout"};
+        String[] names = {"Share","Rate"};
+        int[] img = {R.drawable.icon_share,R.drawable.icon_rate};
 
-        ListPopupWindow popupWindow = new ListPopupWindow(MainActivity.this);
+        popupWindow = new ListPopupWindow(MainActivity.this);
         popupWindow.setAnchorView(menuSettings);
         ArrayList<String> arrayList = new ArrayList<>(Arrays.asList(names));
 
@@ -92,17 +102,90 @@ public class MainActivity extends ActionBarActivity {
         int height =  getResources().getDisplayMetrics().heightPixels;
 
         popupWindow.setWidth((int)(width/1.5));
-        popupWindow.setHeight((int) (height / 1.5));
+        popupWindow.setHeight(150);
         popupWindow.setModal(true);
-        popupWindow.setAdapter(new SettingsAdapter(MainActivity.this,arrayList));
+        popupWindow.setAdapter(new SettingsAdapter(MainActivity.this,arrayList,img));
         popupWindow.show();
     }
 
+    public  class SettingsAdapter extends ArrayAdapter<String> {
 
-    private void initialize(){
+        // View lookup cache
+        private ArrayList<String> users;
+        Context ctx;
+        int[] iconImg;
 
-      }
+        private class ViewHolder {
+            TextView name;
+            TextView home;
+        }
 
+        public SettingsAdapter(Context context, ArrayList<String> users,int[] icon) {
+            super(context, R.layout.item_popup, users);
+            this.users = users;
+            this.ctx = context;
+            this.iconImg = icon;
+        }
+
+        @Override
+        public View getView(final int position, View convertView, ViewGroup parent) {
+            // Get the data item for this position
+
+            // Check if an existing view is being reused, otherwise inflate the view
+            ViewHolder viewHolder; // view lookup cache stored in tag
+            if (convertView == null) {
+                viewHolder = new ViewHolder();
+                LayoutInflater inflater = LayoutInflater.from(getContext());
+                convertView = inflater.inflate(R.layout.item_popup, parent, false);
+
+                ImageView imgIcon = (ImageView)convertView.findViewById(R.id.imgIcon);
+                imgIcon.setBackgroundResource(iconImg[position]);
+
+                TextView itemNames = (TextView) convertView.findViewById(R.id.txtItemName);
+                itemNames.setText(users.get(position));
+
+                convertView.setTag(viewHolder);
+            } else {
+                viewHolder = (ViewHolder) convertView.getTag();
+            }
+
+            convertView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    switch (position) {
+                        case 0:
+                            String text = "Please Check out this amazing app 99 Names of Allah , \n https://play.google.com/store/apps/details?id=com.app.namesofallah";
+
+                            Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+                            sharingIntent.setType("text/plain");
+                            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, text);
+                            // sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject");
+                            ctx.startActivity(Intent.createChooser(sharingIntent, "Share using"));
+
+                            popupWindow.dismiss();
+
+                            break;
+                        case 1:
+
+                            Toast.makeText(MainActivity.this,"Please Wat comming soon",Toast.LENGTH_SHORT).show();
+                            popupWindow.dismiss();
+                            break;
+                      /*  case 2:
+                            popupWindow.dismiss();
+
+                            break;*/
+
+
+                    }
+                }
+            });
+
+            // Populate the data into the template view using the data object
+            // Return the completed view to render on screen
+            return convertView;
+        }
+    }
 
     //end of main class
 }

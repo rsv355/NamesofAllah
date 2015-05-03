@@ -142,7 +142,7 @@ public class Content {
         }
 
         for(int a=1;a<=100;a++){
-            this.Wallpaper.add(a-1,"name"+a+"wallpaper");
+            this.Wallpaper.add(a-1,"name"+a+"_wallpaper");
         }
 
 
