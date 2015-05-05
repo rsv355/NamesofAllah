@@ -4,6 +4,7 @@ package com.app.namesofallah;
  * Created by Krishna on 30-04-2015.
  */
 import android.content.Context;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,6 +47,9 @@ class ListAdapter extends BaseAdapter {
        TextView txt = (TextView)view.findViewById(R.id.txt1);
        ImageView icon = (ImageView)view.findViewById(R.id.imgIcon);
 
+
+        Typeface tf = Typeface.createFromAsset(ctx.getAssets(),"fonts/Gabriela-Regular.ttf");
+        txt.setTypeface(tf,Typeface.BOLD);
        txt.setText(obj.Names.get(position));
 
 

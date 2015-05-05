@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
@@ -35,7 +36,6 @@ import android.widget.Toast;
 public class SubActivity extends ActionBarActivity {
 
     private ImageView left,right,playAudio,mainImg;
-    private String[] names1 = {"My Recipes", "Profiles", "Add Recipe"};
     private Toolbar toolbar;
     private TextView heading,subheading,desc;
     private int POS;
@@ -139,6 +139,12 @@ public class SubActivity extends ActionBarActivity {
 
         mainImg.setBackgroundResource(resId);
 
+
+
+        Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/Gabriela-Regular.ttf");
+        heading.setTypeface(tf);
+        subheading.setTypeface(tf,Typeface.BOLD_ITALIC);
+        desc.setTypeface(tf);
 
         heading.setText(obj.Names.get(POS2));
         subheading.setText(obj.Sub_heading.get(POS2));
