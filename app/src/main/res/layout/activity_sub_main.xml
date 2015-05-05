@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primaryColor"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".MainActivity">
     <include layout="@layout/app_bar"/>
@@ -116,6 +117,12 @@
         android:id="@+id/ad"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-1878227272753934/6884990405" />
     </RelativeLayout>
 
 </LinearLayout>

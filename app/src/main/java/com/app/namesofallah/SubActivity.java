@@ -35,9 +35,11 @@ import java.util.Arrays;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.google.ads.AdRequest;
-import com.google.ads.AdSize;
-import com.google.ads.AdView;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.InterstitialAd;
 
 public class SubActivity extends ActionBarActivity {
 
@@ -48,6 +50,7 @@ public class SubActivity extends ActionBarActivity {
     Content obj;
     ProgressDialog dialog;
     ListPopupWindow popupWindow;
+    InterstitialAd interstitial;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,16 +63,29 @@ public class SubActivity extends ActionBarActivity {
             setSupportActionBar(toolbar);
         }
         toolbar.setNavigationIcon(R.drawable.toolbaricon);
-
-
-
+        interstitial = new InterstitialAd(SubActivity.this);
+        interstitial.setAdUnitId("ca-app-pub-1878227272753934/8361723600");
         // adview starts
-        AdView adView = new AdView(this, AdSize.SMART_BANNER, "ca-app-pub-1878227272753934/6884990405");
-        adView.setGravity(Gravity.CENTER);
-        RelativeLayout layout = (RelativeLayout)findViewById(R.id.ad);
-        layout.addView(adView);
-        AdRequest request = new AdRequest();
-        adView.loadAd(request);
+
+        AdView adView = (AdView) this.findViewById(R.id.adView);
+        // Request for Ads
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+
+        // Load ads into Banner Ads
+        adView.loadAd(adRequest);
+
+        // Load ads into Interstitial Ads
+        interstitial.loadAd(adRequest);
+
+        // Prepare an Interstitial Ad Listener
+        interstitial.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+                // Call displayInterstitial() function
+                displayInterstitial();
+            }
+        });
+
         // adview ends
 
         obj = new Content();
@@ -143,7 +159,12 @@ public class SubActivity extends ActionBarActivity {
             }
         });
     }
-
+    public void displayInterstitial() {
+        // If Ads are loaded, show Interstitial else show nothing.
+        if (interstitial.isLoaded()) {
+            interstitial.show();
+        }
+    }
 
     private void fillDetails(int POS2){
 

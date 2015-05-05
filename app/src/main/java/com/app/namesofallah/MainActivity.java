@@ -23,9 +23,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.ads.AdRequest;
-import com.google.ads.AdSize;
-import com.google.ads.AdView;
 import com.twotoasters.jazzylistview.JazzyListView;
 import com.twotoasters.jazzylistview.effects.CurlEffect;
 
@@ -52,13 +49,16 @@ public class MainActivity extends ActionBarActivity {
         toolbar.setNavigationIcon(R.drawable.toolbaricon);
 
 
-        // adview starts
+       /* // adview starts
         AdView adView = new AdView(this, AdSize.SMART_BANNER, "ca-app-pub-1878227272753934/6884990405");
         adView.setGravity(Gravity.CENTER);
         RelativeLayout layout = (RelativeLayout)findViewById(R.id.ad);
         layout.addView(adView);
         AdRequest request = new AdRequest();
-        adView.loadAd(request);
+        adView.loadAd(request);*/
+
+
+
         // adview ends
 
         JazzyListView list = (JazzyListView) findViewById(R.id.list);
