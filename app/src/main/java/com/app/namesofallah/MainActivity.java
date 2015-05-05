@@ -3,11 +3,13 @@ package com.app.namesofallah;
 import android.app.WallpaperManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.ListPopupWindow;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,9 +18,14 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.ads.AdRequest;
+import com.google.ads.AdSize;
+import com.google.ads.AdView;
 import com.twotoasters.jazzylistview.JazzyListView;
 import com.twotoasters.jazzylistview.effects.CurlEffect;
 
@@ -42,9 +49,17 @@ public class MainActivity extends ActionBarActivity {
 //            toolbar.setLogo(R.drawable.logo);
             setSupportActionBar(toolbar);
         }
-        toolbar.setNavigationIcon(R.mipmap.ic_launcher);
+        toolbar.setNavigationIcon(R.drawable.toolbaricon);
 
 
+        // adview starts
+        AdView adView = new AdView(this, AdSize.SMART_BANNER, "ca-app-pub-1878227272753934/6884990405");
+        adView.setGravity(Gravity.CENTER);
+        RelativeLayout layout = (RelativeLayout)findViewById(R.id.ad);
+        layout.addView(adView);
+        AdRequest request = new AdRequest();
+        adView.loadAd(request);
+        // adview ends
 
         JazzyListView list = (JazzyListView) findViewById(R.id.list);
 
@@ -102,7 +117,7 @@ public class MainActivity extends ActionBarActivity {
         int height =  getResources().getDisplayMetrics().heightPixels;
 
         popupWindow.setWidth((int)(width/1.5));
-        popupWindow.setHeight(150);
+        popupWindow.setHeight(200);
         popupWindow.setModal(true);
         popupWindow.setAdapter(new SettingsAdapter(MainActivity.this,arrayList,img));
         popupWindow.show();

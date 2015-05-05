@@ -24,4 +24,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.0.0'
     compile 'com.twotoasters.jazzylistview:library:1.2.1'
     compile 'com.twotoasters.jazzylistview:library-recyclerview:1.2.1'
+    compile files('libs/GoogleAdMobAdsSdk-6.4.1.jar')
+
 }

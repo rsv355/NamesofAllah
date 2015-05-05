@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.ListPopupWindow;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,6 +24,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -32,6 +34,10 @@ import java.util.Arrays;
 
 import android.util.Log;
 import android.widget.Toast;
+
+import com.google.ads.AdRequest;
+import com.google.ads.AdSize;
+import com.google.ads.AdView;
 
 public class SubActivity extends ActionBarActivity {
 
@@ -53,7 +59,18 @@ public class SubActivity extends ActionBarActivity {
 //            toolbar.setLogo(R.drawable.logo);
             setSupportActionBar(toolbar);
         }
-        toolbar.setNavigationIcon(R.mipmap.ic_launcher);
+        toolbar.setNavigationIcon(R.drawable.toolbaricon);
+
+
+
+        // adview starts
+        AdView adView = new AdView(this, AdSize.SMART_BANNER, "ca-app-pub-1878227272753934/6884990405");
+        adView.setGravity(Gravity.CENTER);
+        RelativeLayout layout = (RelativeLayout)findViewById(R.id.ad);
+        layout.addView(adView);
+        AdRequest request = new AdRequest();
+        adView.loadAd(request);
+        // adview ends
 
         obj = new Content();
         left = (ImageView)findViewById(R.id.left);
@@ -205,7 +222,7 @@ public class SubActivity extends ActionBarActivity {
         int height =  getResources().getDisplayMetrics().heightPixels;
 
         popupWindow.setWidth((int) (width / 1.5));
-        popupWindow.setHeight(100);
+        popupWindow.setHeight(150);
         popupWindow.setModal(true);
         popupWindow.setAdapter(new SettingsAdapterSub(SubActivity.this, arrayList,img));
         popupWindow.show();
