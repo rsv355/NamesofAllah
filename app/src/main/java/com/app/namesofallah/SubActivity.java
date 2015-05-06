@@ -144,7 +144,7 @@ public class SubActivity extends ActionBarActivity {
                 });
 
 
-                if(POS>=99){
+                if(POS>=98){
                     Toast.makeText(SubActivity.this,"You are at Last Word",Toast.LENGTH_LONG).show();
                 }else {
                     POS += 1;
