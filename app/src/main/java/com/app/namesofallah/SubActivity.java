@@ -51,6 +51,7 @@ public class SubActivity extends ActionBarActivity {
     ProgressDialog dialog;
     ListPopupWindow popupWindow;
     InterstitialAd interstitial;
+    AdRequest adRequest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +70,7 @@ public class SubActivity extends ActionBarActivity {
 
         AdView adView = (AdView) this.findViewById(R.id.adView);
         // Request for Ads
-        AdRequest adRequest = new AdRequest.Builder()
+        adRequest = new AdRequest.Builder()
                 .build();
 
         // Load ads into Banner Ads
@@ -105,6 +106,18 @@ public class SubActivity extends ActionBarActivity {
         left.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
+
+                // Load ads into Interstitial Ads
+                interstitial.loadAd(adRequest);
+
+                // Prepare an Interstitial Ad Listener
+                interstitial.setAdListener(new AdListener() {
+                    public void onAdLoaded() {
+                        // Call displayInterstitial() function
+                        displayInterstitial();
+                    }
+                });
+
                 if(POS <= 0){
                     Toast.makeText(SubActivity.this,"You are at First Word",Toast.LENGTH_LONG).show();
                 }else {
@@ -118,12 +131,26 @@ public class SubActivity extends ActionBarActivity {
         right.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
+
+                // Load ads into Interstitial Ads
+                interstitial.loadAd(adRequest);
+
+                // Prepare an Interstitial Ad Listener
+                interstitial.setAdListener(new AdListener() {
+                    public void onAdLoaded() {
+                        // Call displayInterstitial() function
+                        displayInterstitial();
+                    }
+                });
+
+
                 if(POS>=99){
                     Toast.makeText(SubActivity.this,"You are at Last Word",Toast.LENGTH_LONG).show();
                 }else {
                     POS += 1;
                     fillDetails(POS);
                 }
+
 
                 return false;
             }

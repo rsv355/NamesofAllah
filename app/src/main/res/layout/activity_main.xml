@@ -26,10 +26,11 @@
        </LinearLayout>
 
     <RelativeLayout
+        android:gravity="center"
+        android:layout_gravity="center"
         android:background="@color/primaryColor"
         android:layout_alignParentBottom="true"
         android:id="@+id/ad"
-
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
         <com.google.android.gms.ads.AdView
@@ -37,8 +38,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             ads:adSize="BANNER"
+
             ads:adUnitId="ca-app-pub-1878227272753934/6884990405" />
     </RelativeLayout>
-
 
 </RelativeLayout>

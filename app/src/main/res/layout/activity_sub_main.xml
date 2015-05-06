@@ -112,7 +112,9 @@
 
 
     <RelativeLayout
-        android:background="#000000"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="@color/primaryColor"
         android:layout_alignParentBottom="true"
         android:id="@+id/ad"
         android:layout_width="fill_parent"
