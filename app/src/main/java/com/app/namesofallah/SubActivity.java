@@ -54,6 +54,7 @@ public class SubActivity extends ActionBarActivity {
     AdRequest adRequest;
     int counterLeft=0;
     int counterRight=0;
+    int maincounter=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,7 +79,7 @@ public class SubActivity extends ActionBarActivity {
         // Load ads into Banner Ads
         adView.loadAd(adRequest);
 
-        // Load ads into Interstitial Ads
+       /* // Load ads into Interstitial Ads
         interstitial.loadAd(adRequest);
 
         // Prepare an Interstitial Ad Listener
@@ -87,7 +88,7 @@ public class SubActivity extends ActionBarActivity {
                 // Call displayInterstitial() function
                 displayInterstitial();
             }
-        });
+        });*/
 
         // adview ends
 
@@ -109,17 +110,18 @@ public class SubActivity extends ActionBarActivity {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
 
-                counterLeft +=1;
+                maincounter +=1;
 
-                if(counterLeft==5){
+                if(maincounter==7){
                     // Load ads into Interstitial Ads
                     interstitial.loadAd(adRequest);
                     // Prepare an Interstitial Ad Listener
                     interstitial.setAdListener(new AdListener() {
                         public void onAdLoaded() {
                             // Call displayInterstitial() function
+                            maincounter=0;
                             displayInterstitial();
-                            counterLeft=0;
+
                         }
                     });
 
@@ -142,17 +144,18 @@ public class SubActivity extends ActionBarActivity {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
 
-                counterRight+=1;
+                maincounter+=1;
 
-                if(counterRight==5){
+                if(maincounter==7){
                     // Load ads into Interstitial Ads
                     interstitial.loadAd(adRequest);
                     // Prepare an Interstitial Ad Listener
                     interstitial.setAdListener(new AdListener() {
                         public void onAdLoaded() {
                             // Call displayInterstitial() function
+                            maincounter=0;
                             displayInterstitial();
-                            counterRight=0;
+
                         }
                     });
 

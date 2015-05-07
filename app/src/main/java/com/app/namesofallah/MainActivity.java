@@ -23,8 +23,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.twotoasters.jazzylistview.JazzyListView;
 import com.twotoasters.jazzylistview.effects.CurlEffect;
 
@@ -37,6 +39,11 @@ public class MainActivity extends ActionBarActivity {
     private String[] names1 = {"My Recipes", "Profiles", "Add Recipe"};
     private Toolbar toolbar;
     ListPopupWindow popupWindow;
+
+    InterstitialAd interstitial;
+    AdRequest adRequest;
+    boolean isAdLod=false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,10 +57,13 @@ public class MainActivity extends ActionBarActivity {
         }
         toolbar.setNavigationIcon(R.drawable.toolbaricon);
 
+        interstitial = new InterstitialAd(MainActivity.this);
+        interstitial.setAdUnitId("ca-app-pub-1878227272753934/8361723600");
+
 
         AdView adView = (AdView) this.findViewById(R.id.adView);
         // Request for Ads
-        AdRequest adRequest = new AdRequest.Builder()
+        adRequest = new AdRequest.Builder()
                 .build();
 
         // Load ads into Banner Ads
@@ -80,6 +90,36 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(ii);
             }
         });
+    }
+
+
+    @Override
+    public void onBackPressed() {
+
+            if(isAdLod) {
+                super.onBackPressed();
+            }else {
+                // Load ads into Interstitial Ads
+                interstitial.loadAd(adRequest);
+
+                // Prepare an Interstitial Ad Listener
+                interstitial.setAdListener(new AdListener() {
+                    public void onAdLoaded() {
+                        // Call displayInterstitial() function
+                        displayInterstitial();
+                    }
+                });
+
+            }
+
+    }
+
+    public void displayInterstitial() {
+        // If Ads are loaded, show Interstitial else show nothing.
+        if (interstitial.isLoaded()) {
+            interstitial.show();
+            isAdLod=true;
+        }
     }
 
 
