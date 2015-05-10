@@ -223,10 +223,19 @@ public class SubActivity extends ActionBarActivity {
 
 
     public void displayInterstitial() {
+
+        String fname=obj.Audio.get(POS);
+        int resID=getResources().getIdentifier(fname, "raw", getPackageName());
+        mediaPlayer=MediaPlayer.create(SubActivity.this,resID);
+
         // If Ads are loaded, show Interstitial else show nothing.
         if (interstitial.isLoaded()) {
-            mediaPlayer.stop();
-            dialog.dismiss();
+
+           if(mediaPlayer.isPlaying()) {
+               mediaPlayer.stop();
+               dialog.dismiss();
+           }
+
             interstitial.show();
         }
     }
