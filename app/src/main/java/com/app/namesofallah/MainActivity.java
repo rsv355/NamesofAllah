@@ -4,6 +4,7 @@ import android.app.WallpaperManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.ListPopupWindow;
@@ -93,7 +94,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
-    @Override
+    /*@Override
     public void onBackPressed() {
 
             if(isAdLod) {
@@ -112,7 +113,7 @@ public class MainActivity extends ActionBarActivity {
 
             }
 
-    }
+    }*/
 
     public void displayInterstitial() {
         // If Ads are loaded, show Interstitial else show nothing.
@@ -149,8 +150,8 @@ public class MainActivity extends ActionBarActivity {
     private void openSettings() {
         View menuSettings = findViewById(R.id.action_settings); // SAME ID AS MENU ID
 
-        String[] names = {"Share","Rate"};
-        int[] img = {R.drawable.icon_share,R.drawable.icon_rate};
+        String[] names = {"Islamic Duas","Urdu Qaida","Kids Book","Location App","Currency Conv.","Share","Rate"};
+//        int[] img = {R.drawable.icon_share,R.drawable.icon_rate};
 
         popupWindow = new ListPopupWindow(MainActivity.this);
         popupWindow.setAnchorView(menuSettings);
@@ -159,10 +160,10 @@ public class MainActivity extends ActionBarActivity {
         int width = getResources().getDisplayMetrics().widthPixels;
         int height =  getResources().getDisplayMetrics().heightPixels;
 
-        popupWindow.setWidth((int)(width/1.5));
-        popupWindow.setHeight(200);
+        popupWindow.setWidth((int) (width / 1.5));
+
         popupWindow.setModal(true);
-        popupWindow.setAdapter(new SettingsAdapter(MainActivity.this,arrayList,img));
+        popupWindow.setAdapter(new SettingsAdapter(MainActivity.this,arrayList));
         popupWindow.show();
     }
 
@@ -171,18 +172,18 @@ public class MainActivity extends ActionBarActivity {
         // View lookup cache
         private ArrayList<String> users;
         Context ctx;
-        int[] iconImg;
+
 
         private class ViewHolder {
             TextView name;
             TextView home;
         }
 
-        public SettingsAdapter(Context context, ArrayList<String> users,int[] icon) {
+        public SettingsAdapter(Context context, ArrayList<String> users) {
             super(context, R.layout.item_popup, users);
             this.users = users;
             this.ctx = context;
-            this.iconImg = icon;
+
         }
 
         @Override
@@ -196,9 +197,9 @@ public class MainActivity extends ActionBarActivity {
                 LayoutInflater inflater = LayoutInflater.from(getContext());
                 convertView = inflater.inflate(R.layout.item_popup, parent, false);
 
-                ImageView imgIcon = (ImageView)convertView.findViewById(R.id.imgIcon);
+              /*  ImageView imgIcon = (ImageView)convertView.findViewById(R.id.imgIcon);
                 imgIcon.setBackgroundResource(iconImg[position]);
-
+*/
                 TextView itemNames = (TextView) convertView.findViewById(R.id.txtItemName);
                 itemNames.setText(users.get(position));
 
@@ -213,6 +214,52 @@ public class MainActivity extends ActionBarActivity {
 
                     switch (position) {
                         case 0:
+                            final String appPackageName3 = "com.app.islamicduaapp"; // getPackageName() from Context or Activity object
+                            try {
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName3)));
+                            } catch (android.content.ActivityNotFoundException anfe) {
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName3)));
+                            }
+                            break;
+                        case 1:
+
+                            final String appPackageName5 = "com.app.urduqaida"; // getPackageName() from Context or Activity object
+                            try {
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName5)));
+                            } catch (android.content.ActivityNotFoundException anfe) {
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName5)));
+                            }
+                            break;
+                        case 2:
+
+                            final String appPackageName = "com.app.kidsbookapp"; // getPackageName() from Context or Activity object
+                            try {
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+                            } catch (android.content.ActivityNotFoundException anfe) {
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+                            }
+
+                            break;
+
+                        case 3:
+
+                            final String appPackageName2 = "com.app.LocationFinder"; // getPackageName() from Context or Activity object
+                            try {
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName2)));
+                            } catch (android.content.ActivityNotFoundException anfe) {
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName2)));
+                            }
+                            break;
+                        case 4:
+
+                            final String appPackageName4 = "com.currencyapp.currencyconverter"; // getPackageName() from Context or Activity object
+                            try {
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName4)));
+                            } catch (android.content.ActivityNotFoundException anfe) {
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName4)));
+                            }
+                            break;
+                        case 5:
                             String text = "Please Check out this amazing app 99 Names of Allah , \n https://play.google.com/store/apps/details?id=com.app.namesofallah";
 
                             Intent sharingIntent = new Intent(Intent.ACTION_SEND);
@@ -224,9 +271,8 @@ public class MainActivity extends ActionBarActivity {
                             popupWindow.dismiss();
 
                             break;
-                        case 1:
-
-                            Toast.makeText(MainActivity.this,"Please Wat comming soon",Toast.LENGTH_SHORT).show();
+                        case 6:
+                            showalertBox();
                             popupWindow.dismiss();
                             break;
                       /*  case 2:
@@ -244,6 +290,12 @@ public class MainActivity extends ActionBarActivity {
             return convertView;
         }
     }
+
+    private void showalertBox(){
+            CustomDialogBox box = new CustomDialogBox(MainActivity.this);
+            box.show();
+    }
+
 
     //end of main class
 }

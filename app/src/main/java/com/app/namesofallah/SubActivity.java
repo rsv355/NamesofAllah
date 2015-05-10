@@ -1,8 +1,10 @@
 package com.app.namesofallah;
 
+import android.app.DialogFragment;
 import android.app.ProgressDialog;
 import android.app.WallpaperManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
@@ -55,6 +57,7 @@ public class SubActivity extends ActionBarActivity {
     int counterLeft=0;
     int counterRight=0;
     int maincounter=0;
+    MediaPlayer mediaPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -181,11 +184,21 @@ public class SubActivity extends ActionBarActivity {
             public boolean onTouch(View view, MotionEvent motionEvent) {
 
                 dialog= ProgressDialog.show(SubActivity.this,obj.Names.get(POS),"Playing audio",true);
-                dialog.setCancelable(false);
+                dialog.setCancelable(true);
 
                 String fname=obj.Audio.get(POS);
                 int resID=getResources().getIdentifier(fname, "raw", getPackageName());
-                MediaPlayer mediaPlayer=MediaPlayer.create(SubActivity.this,resID);
+                mediaPlayer=MediaPlayer.create(SubActivity.this,resID);
+
+                mediaPlayer.start();
+
+
+                dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                    @Override
+                    public void onDismiss(DialogInterface dialogInterface) {
+                        mediaPlayer.stop();
+                    }
+                });
 
                 mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                     @Override
@@ -193,11 +206,11 @@ public class SubActivity extends ActionBarActivity {
                         dialog.show();
                     }
                 });
-                mediaPlayer.start();
 
                 mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(MediaPlayer mediaPlayer) {
+                        mediaPlayer.stop();
                         dialog.dismiss();
                     }
                 });
@@ -206,9 +219,14 @@ public class SubActivity extends ActionBarActivity {
             }
         });
     }
+
+
+
     public void displayInterstitial() {
         // If Ads are loaded, show Interstitial else show nothing.
         if (interstitial.isLoaded()) {
+            mediaPlayer.stop();
+            dialog.dismiss();
             interstitial.show();
         }
     }
@@ -324,7 +342,7 @@ public class SubActivity extends ActionBarActivity {
             if (convertView == null) {
                 viewHolder = new ViewHolder();
                 LayoutInflater inflater = LayoutInflater.from(getContext());
-                convertView = inflater.inflate(R.layout.item_popup, parent, false);
+                convertView = inflater.inflate(R.layout.item_popup2, parent, false);
 
                 ImageView imgIcon = (ImageView)convertView.findViewById(R.id.imgIcon);
                 imgIcon.setBackgroundResource(iconImg[position]);
