@@ -69,9 +69,6 @@ public class MainActivity extends ActionBarActivity {
 
         // Load ads into Banner Ads
         adView.loadAd(adRequest);
-
-
-
         // adview ends
 
         JazzyListView list = (JazzyListView) findViewById(R.id.list);

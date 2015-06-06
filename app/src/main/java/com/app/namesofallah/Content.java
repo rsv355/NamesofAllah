@@ -124,7 +124,7 @@ public class Content {
         this.Names.add(93,"Al-Haadee");
         this.Names.add(94,"Al-Badee'");
         this.Names.add(95,"Al-Baaqee");
-        this.Names.add(96,"Al-Waarith");
+        this.Names.add(96,"Al-Waarish");
         this.Names.add(97,"Ar-Rasheed");
         this.Names.add(98,"As-Saboor");
        
