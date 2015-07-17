@@ -115,7 +115,7 @@ public class SubActivity extends ActionBarActivity {
 
                 maincounter +=1;
 
-                if(maincounter==7){
+                if(maincounter==15){
                     // Load ads into Interstitial Ads
                     interstitial.loadAd(adRequest);
                     // Prepare an Interstitial Ad Listener
@@ -149,7 +149,7 @@ public class SubActivity extends ActionBarActivity {
 
                 maincounter+=1;
 
-                if(maincounter==7){
+                if(maincounter==15){
                     // Load ads into Interstitial Ads
                     interstitial.loadAd(adRequest);
                     // Prepare an Interstitial Ad Listener
